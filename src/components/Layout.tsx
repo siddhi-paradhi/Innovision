@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import innovisionLogo from "@/assets/innovision-logo.jpg";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
@@ -9,12 +10,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <header className="border-b border-border bg-card">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center justify-between">
-            <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                <div className="w-4 h-4 border-2 border-primary-foreground rounded-full relative">
-                  <div className="absolute inset-1 bg-primary-foreground rounded-full"></div>
-                </div>
-              </div>
+            <Link to="/" className="flex items-center space-x-3">
+              <img 
+                src={innovisionLogo} 
+                alt="INNOVISION Logo" 
+                className="h-8 w-auto"
+              />
               <span className="text-xl font-bold text-foreground">INNOVISION</span>
             </Link>
             
