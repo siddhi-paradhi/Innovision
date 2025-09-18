@@ -1,73 +1,146 @@
-# Welcome to your Lovable project
+# TruthLens AI - Misinformation Checker
 
-## Project info
+A modern React web application for analyzing text credibility using AI-powered detection.
 
-**URL**: https://lovable.dev/projects/e5dc966b-90b9-488d-b334-eafd4654185f
+## Prerequisites
 
-## How can I edit this code?
+Before running this project locally, make sure you have the following installed:
 
-There are several ways of editing your application.
+### Required Software
+1. **Node.js** (v18.0.0 or higher)
+   - Download from: https://nodejs.org/
+   - Verify installation: `node --version`
 
-**Use Lovable**
+2. **npm** (comes with Node.js) or **yarn**
+   - Verify npm: `npm --version`
+   - Or install yarn: `npm install -g yarn`
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e5dc966b-90b9-488d-b334-eafd4654185f) and start prompting.
+3. **VS Code** (recommended)
+   - Download from: https://code.visualstudio.com/
 
-Changes made via Lovable will be committed automatically to this repo.
+### Recommended VS Code Extensions
+- ES7+ React/Redux/React-Native snippets
+- Tailwind CSS IntelliSense
+- TypeScript Importer
+- Prettier - Code formatter
+- Auto Rename Tag
 
-**Use your preferred IDE**
+## Setup Instructions
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. **Extract the downloaded zip file** to your desired location
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. **Open the project in VS Code**
+   ```bash
+   cd path/to/your/extracted-folder
+   code .
+   ```
 
-Follow these steps:
+3. **Install dependencies**
+   ```bash
+   npm install
+   # or if you prefer yarn
+   yarn install
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+4. **Start the development server**
+   ```bash
+   npm run dev
+   # or with yarn
+   yarn dev
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+   **If you see unstyled content (plain HTML):** This means Tailwind CSS isn't processing. Try:
+   ```bash
+   # Stop the server (Ctrl+C) and restart
+   npm run dev
+   
+   # Or clear cache and restart
+   rm -rf node_modules package-lock.json
+   npm install
+   npm run dev
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+5. **Open your browser** and navigate to `http://localhost:5173`
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint for code quality
+
+## Project Structure
+
+```
+├── App.tsx                 # Main application component
+├── main.tsx               # Application entry point
+├── index.html             # HTML template
+├── components/            # React components
+│   ├── Navigation.tsx
+│   ├── HeroSection.tsx
+│   ├── ResultsSection.tsx
+│   ├── HistorySection.tsx
+│   ├── CredibilityGauge.tsx
+│   └── ui/               # Reusable UI components (shadcn/ui)
+├── styles/
+│   └── globals.css       # Global styles and Tailwind config
+└── package.json          # Dependencies and scripts
 ```
 
-**Edit a file directly in GitHub**
+## Features
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- ✨ Modern, clean UI with Tailwind CSS
+- 🎯 AI-powered credibility analysis (mock implementation)
+- 📊 Visual credibility scoring with circular gauge
+- 📝 Analysis history with local storage
+- 🎨 Responsive design for all devices
+- ⚡ Fast development with Vite
+- 🔧 TypeScript for type safety
 
-**Use GitHub Codespaces**
+## Technology Stack
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **React 18** with TypeScript
+- **Vite** for fast development and building
+- **Tailwind CSS v4** for styling
+- **shadcn/ui** components
+- **Lucide React** for icons
 
-## What technologies are used for this project?
+## Development Notes
 
-This project is built with:
+- The app currently uses mock analysis - replace the `performAnalysis` function in `App.tsx` to integrate with a real AI API
+- All components are fully typed with TypeScript
+- The design system follows modern UI patterns with proper accessibility
+- Ready for deployment to any static hosting service
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Troubleshooting
 
-## How can I deploy this project?
+### Common Issues
 
-Simply open [Lovable](https://lovable.dev/projects/e5dc966b-90b9-488d-b334-eafd4654185f) and click on Share -> Publish.
+1. **Port already in use**
+   - Change port: `npm run dev -- --port 3000`
 
-## Can I connect a custom domain to my Lovable project?
+2. **Dependencies installation fails**
+   - Delete `node_modules` and `package-lock.json`
+   - Run `npm install` again
 
-Yes, you can!
+3. **TypeScript errors**
+   - Make sure you're using Node.js v18+
+   - Restart VS Code TypeScript server: `Ctrl+Shift+P` → "TypeScript: Restart TS Server"
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+4. **Styles not loading**
+   - Make sure Tailwind CSS is properly configured
+   - Check that `globals.css` is imported in `main.tsx`
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Deployment
+
+To deploy to production:
+
+1. Build the project: `npm run build`
+2. Upload the `dist` folder to your hosting service
+3. Configure your server to serve `index.html` for all routes
+
+Popular hosting options:
+- Vercel (recommended)
+- Netlify
+- GitHub Pages
+- AWS S3 + CloudFront
