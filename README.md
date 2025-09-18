@@ -1,4 +1,4 @@
-# TruthLens AI - Misinformation Checker
+# Innovision- AI Minsinformation Detector
 
 A modern React web application for analyzing text credibility using AI-powered detection.
 
