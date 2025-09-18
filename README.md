@@ -69,33 +69,18 @@ Before running this project locally, make sure you have the following installed:
 - `npm run preview` - Preview production build locally
 - `npm run lint` - Run ESLint for code quality
 
-## Project Structure
 
-```
-├── App.tsx                 # Main application component
-├── main.tsx               # Application entry point
-├── index.html             # HTML template
-├── components/            # React components
-│   ├── Navigation.tsx
-│   ├── HeroSection.tsx
-│   ├── ResultsSection.tsx
-│   ├── HistorySection.tsx
-│   ├── CredibilityGauge.tsx
-│   └── ui/               # Reusable UI components (shadcn/ui)
-├── styles/
-│   └── globals.css       # Global styles and Tailwind config
-└── package.json          # Dependencies and scripts
 ```
 
 ## Features
 
-- ✨ Modern, clean UI with Tailwind CSS
-- 🎯 AI-powered credibility analysis (mock implementation)
-- 📊 Visual credibility scoring with circular gauge
-- 📝 Analysis history with local storage
-- 🎨 Responsive design for all devices
-- ⚡ Fast development with Vite
-- 🔧 TypeScript for type safety
+- Modern, clean UI with Tailwind CSS
+- AI-powered credibility analysis (mock implementation)
+- Visual credibility scoring with circular gauge
+- Analysis history with local storage
+- Responsive design for all devices
+- Fast development with Vite
+- TypeScript for type safety
 
 ## Technology Stack
 
@@ -104,32 +89,6 @@ Before running this project locally, make sure you have the following installed:
 - **Tailwind CSS v4** for styling
 - **shadcn/ui** components
 - **Lucide React** for icons
-
-## Development Notes
-
-- The app currently uses mock analysis - replace the `performAnalysis` function in `App.tsx` to integrate with a real AI API
-- All components are fully typed with TypeScript
-- The design system follows modern UI patterns with proper accessibility
-- Ready for deployment to any static hosting service
-
-## Troubleshooting
-
-### Common Issues
-
-1. **Port already in use**
-   - Change port: `npm run dev -- --port 3000`
-
-2. **Dependencies installation fails**
-   - Delete `node_modules` and `package-lock.json`
-   - Run `npm install` again
-
-3. **TypeScript errors**
-   - Make sure you're using Node.js v18+
-   - Restart VS Code TypeScript server: `Ctrl+Shift+P` → "TypeScript: Restart TS Server"
-
-4. **Styles not loading**
-   - Make sure Tailwind CSS is properly configured
-   - Check that `globals.css` is imported in `main.tsx`
 
 ## Deployment
 
